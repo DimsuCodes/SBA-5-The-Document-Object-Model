@@ -19,7 +19,7 @@ The reason we need `JSON.stringify` is because it turns the list into text, and 
 
 One of the challenges I faced was that my empty state message didn't show because of leftover test data in localStorage. I used the DevTools console to inspect the posts array and cleared it, which is how I overcame the issue.
 
-[Add one more challenge here in your own words, e.g. typos or brackets that broke the script and how you found them]
+I had a hard time figuring out which functions to use and where to link them.
 
 ## Known Issues
 - The Edit button does not work yet
