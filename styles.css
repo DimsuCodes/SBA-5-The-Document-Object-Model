@@ -1,0 +1,162 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Zen Maru Gothic", sans-serif;
+    background: #F4EEDC;
+    color: #3B3A33;
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 24px 16px;
+    line-height: 1.5;
+}
+
+h1, h2, h3 {
+    font-family: "Shippori Mincho", serif;
+}
+
+header h1 {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-weight: normal;
+    color: #3F5A3A;
+}
+
+h2 {
+    font-weight: normal;
+    color: #3F5A3A;
+    border-bottom: 1px solid #D8CFB4;
+    padding-bottom: 6px;
+}
+
+section {
+    margin-bottom: 32px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    margin-bottom: 14px;
+}
+
+label {
+    font-weight: bold;
+}
+
+input,
+textarea {
+    width: 100%;
+    padding: 10px;
+    font: inherit;
+    color: inherit;
+    background: #FBF8EE;
+    border: 1px solid #D8CFB4;
+    border-radius: 6px;
+}
+
+input:focus,
+textarea:focus {
+    outline: 2px solid #7A9A5B;
+    border-color: #7A9A5B;
+}
+
+button {
+    display: inline-flex;
+    align-items: center;
+    padding: 8px 14px;
+    font: inherit;
+    color: white;
+    background: #3F5A3A;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+button:hover {
+    opacity: 0.85;
+}
+
+.error-message {
+    color: #A8402F;
+    font-size: 0.9rem;
+    min-height: 1.2em;
+}
+
+.post-card {
+    background: #FBF8EE;
+    border: 1px solid #D8CFB4;
+    border-radius: 10px;
+    padding: 16px;
+    margin-bottom: 14px;
+}
+
+.post-card h3 {
+    margin: 0 0 8px;
+    display: flex;
+    align-items: center;
+}
+
+.post-card p {
+    margin: 0 0 12px;
+    white-space: pre-wrap;
+}
+
+.post-card button {
+    margin-right: 8px;
+}
+
+.edit-btn {
+    background: #7A9A5B;
+}
+
+.delete-btn {
+    background: #B08A5E;
+}
+
+.edit-btn::before,
+.delete-btn::before,
+#pom button::before,
+.post-card h3::before,
+#formHeading::before,
+#postsHeading::before {
+    content: "";
+    display: inline-block;
+    width: 1.2em;
+    height: 1.2em;
+    margin-right: 6px;
+    vertical-align: middle;
+    background: center / contain no-repeat;
+}
+
+#pom button::before      { background-image: url("icons/sprout-save.svg"); }
+.edit-btn::before        { background-image: url("icons/brush-edit.svg"); }
+.delete-btn::before      { background-image: url("icons/leaf-delete.svg"); }
+.post-card h3::before    { background-image: url("icons/note-post.svg"); }
+#formHeading::before     { background-image: url("icons/seed-add.svg"); }
+#postsHeading::before    { background-image: url("icons/leaf.svg"); }
+
+#postsContainer > p {
+    text-align: center;
+    color: #8B7E66;
+}
+
+#postsContainer > p::before {
+    content: "";
+    display: block;
+    width: 96px;
+    height: 64px;
+    margin: 0 auto 8px;
+    background: url("icons/cloud-hills-empty.svg");
+}
+
+main::after {
+    content: "";
+    display: block;
+    width: 48px;
+    height: 48px;
+    margin: 32px auto 0;
+    background: url("icons/stones-zen.svg");
+}
