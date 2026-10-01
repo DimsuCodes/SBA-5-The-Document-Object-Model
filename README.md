@@ -4,7 +4,7 @@
 
 In this app you can create a post with a title and stir up whatever creativity you'd like to spew. You submit your post and it gets displayed, and you have the option to go back and delete your posts. Your content is saved.
 
-   ![Pieces of Me screenshot](./icons/preview.png)
+   <img src="./icons/preview.png" alt="Pieces of Me screenshot" width="300">
 ## How to Run
 Open `index.html` in any browser. Nothing else is needed.
 
