@@ -21,7 +21,59 @@ function saveAndRender() {
         return;
     }
 
+    posts.forEach((post) => {
+        const card = document.createElement("article");
+        card.classList.add("post-card");
+        card.dataset.id = post.id;
+
+        card.innerHTML = `
+        <h3>${post.title}</h3>
+        <p>${post.content}</p>
+        <button class = "edit-btn">Edit</button>
+        <button class = "delete-btn">Delete</button>`;
+        postsContainer.append(card);
+    }
+    );
 }
+
+postForm.addEventListener('submit', (event) => {
+    event.preventDefault();
+    const titleOK = validateField(titleInput, titleError, "Title");
+    const contentOK = validateField(contentInput, contentError, "Content");
+    if (!titleOK || !contentOK) return;
+
+
+    posts.push ({
+        id: Date.now(),
+        title: titleInput.value.trim(),
+        content: contentInput.value.trim(),
+        timestamp: new Date().toLocaleString(),
+    });
+    saveAndRender();
+    postForm.reset();
+});  
+
+
+postsContainer.addEventListener("click", (event) => {
+    const card = event.target.closest(".post-card");
+    if (!card) return;
+    const id = Number(card.dataset.id);
+
+    if (event.target.classList.contains("delete-btn")){
+        posts = posts.filter((post)=> post.id !== id);
+        saveAndRender();
+    }
+});
+
+function validateField(input, errorEl, label) {
+    if (input.value.trim() === "") {
+        errorEl.textContent = `${label} is required 🍂`;
+        return false;
+    }
+    errorEl.textContent = "";
+    return true;
+}
+
 
 saveAndRender();
 
